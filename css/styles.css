@@ -575,7 +575,7 @@ footer {
   stroke-width: 1px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  /* transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), */
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -683,6 +683,7 @@ footer {
 .modal-field.checkbox-area {
   margin-bottom: 24px;
 }
+
 .modal-check-text {
   font-size: 12px;
   line-height: 1.17;
@@ -715,6 +716,9 @@ footer {
     border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.modal-check-text span {
+  margin-right: 8px;
+}
 .modal-check:checked + .modal-check-text span {
   background-color: #404bbf;
   border: none;
@@ -742,7 +746,8 @@ footer {
   margin: 0 auto;
   min-width: 169px;
   margin-bottom: 24px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .backdrop-button:hover,
 backdrop-button:focus {
