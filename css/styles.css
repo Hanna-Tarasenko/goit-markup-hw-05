@@ -444,7 +444,10 @@ footer {
   fill: #f4f4fd;
   stroke: 000000;
 }
-
+.footer-form {
+  display: flex;
+  gap: 24px;
+}
 .footer-form-section {
   display: inline-block;
   margin-left: auto;
@@ -468,6 +471,11 @@ footer {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
   background-color: transparent;
   padding-left: 16px;
+
+  font-size: 12px;
+  line-height: 2;
+  letter-spacing: 0.04em;
+  color: #ffffff;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-input-field:hover,
@@ -480,7 +488,7 @@ footer {
   font-size: 12px;
   line-height: 2;
   letter-spacing: 0.04em;
-  color: #fff;
+  color: #ffffff;
 }
 
 .footer-button {
@@ -489,17 +497,21 @@ footer {
   min-width: 165px;
   background: #4d5ae5;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
-  display: inline-block;
-  align-items: baseline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* align-items: baseline; */
   border: none;
 
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  text-align: center;
+  /* text-align: center; */
   color: #fff;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  height: 40px;
 }
 .footer-button:hover,
 .footer-button:focus {
@@ -507,6 +519,8 @@ footer {
 }
 .footer-button-icon {
   fill: #fff;
+  height: 24;
+  margin-left: 16px;
 }
 .backdrop {
   position: fixed;
@@ -560,9 +574,10 @@ footer {
   stroke-width: 1px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25), 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 0;
+  cursor: pointer;
 }
 .modal-exit-button:hover,
 .modal-exit-button:focus {
@@ -588,10 +603,11 @@ footer {
 .modal-label {
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.16667;
+  line-height: 1.17;
   letter-spacing: 0.04em;
   color: #8e8f99;
   margin-bottom: 4px;
+  display: block;
 }
 .modal-input {
   width: 100%;
@@ -602,6 +618,7 @@ footer {
   padding-left: 38px;
   padding-right: 16px;
   outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-input:focus {
   border-color: #4d5ae5;
@@ -620,18 +637,22 @@ footer {
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.modal-field.textarea-container {
+  margin-bottom: 16px;
+}
+.user-comment {
+  line-height: 1.17;
+}
 .modal-comment {
   width: 100%;
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   height: 120px;
   background-color: transparent;
-  padding-top: 8px;
-  padding-right: 16px;
-  padding-left: 16px;
-  padding-bottom: 16px;
+  padding: 8px 16px;
+  color: rgba(46, 47, 66, 0.4);
 
   outline: transparent;
   width: 360px;
@@ -639,11 +660,19 @@ footer {
 
   font-weight: 400;
   font-size: 12px;
-  line-height: 1.16667;
+  line-height: 1.17;
   letter-spacing: 0.04em;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-comment:focus {
+  border-color: #4d5ae5;
 }
 .modal-comment::placeholder {
   color: rgba(46, 47, 66, 0.4);
+}
+.modal-field.checkbox-area {
+  margin-bottom: 24px;
 }
 .modal-check-text {
   font-size: 12px;
@@ -653,9 +682,8 @@ footer {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-bottom: 24px;
 }
-.modal-check-text span {
+/* .modal-check-text span {
   width: 16px;
   height: 16px;
   border-radius: 2px;
@@ -664,6 +692,19 @@ footer {
   align-items: center;
   justify-content: center;
   fill: transparent;
+} */
+.checkbox-span {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  fill: transparent;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-check:checked + .modal-check-text span {
   background-color: #404bbf;
